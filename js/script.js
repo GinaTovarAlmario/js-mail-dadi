@@ -5,12 +5,14 @@ Stampiamo in pagina i due tiri e il risultato*/
 // controllo tutto sia ok
 console.log('js ok');
 /*
-1- mi servirà una variabile per il numero random utente e una per il numero random pc e per il messaggio 
+1- mi servirà una variabile per il numero random utente e una per il numero random pc e per il messaggio e prendere l'elememnto dal DOM
+che mi servirà per stampare inpagina
 2- dovrò generare due numeri casuali con la formula
 3- devo controllare quale dei due numeri è il più alto 
 4- annunciare chi è il vincitore*/
 
 // FASE PREPARAZIONE
+const result = document.getElementById('result');
 const userRandomNumber=Math.floor(Math.random()*6)+1;
 console.log('numero casuale utente :',userRandomNumber);
 
@@ -30,6 +32,7 @@ if (userRandomNumber > pcRandomNumber){
 }
 console.log(resultMessage);
 // FASE DI OUTPUT
+result.innerText = `Numero casuale utente: ${userRandomNumber}\n Numero casuale pc: ${pcRandomNumber}.\n ${resultMessage}`;
 
 
 
