@@ -63,13 +63,14 @@ button.addEventListener('click',function(){
     let finalMessage ='';
     for(i=0; i< emailAuthorized.length; i++){
         if(emailAuthorized[i]=== receivedEmail){
-            finalMessage ='email autorizzata';
+            finalMessage ='email autorizzata. Bentornato';
         }
     }
     // se finalMessage è ancora uguale a stringa vuota non ho avuto nessuna corrispondenza
     if (finalMessage === ''){
         finalMessage ='email non autorizzata!';
     }
+    // FASE DI OUTPUT
     console.log(finalMessage);
+    alert(finalMessage);
 });
-// FASE DI OUTPUT
