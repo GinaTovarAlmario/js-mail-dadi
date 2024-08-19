@@ -33,25 +33,43 @@ if (userRandomNumber > pcRandomNumber){
 console.log(resultMessage);
 // FASE DI OUTPUT
 result.innerText = `Numero casuale utente: ${userRandomNumber}\n Numero casuale pc: ${pcRandomNumber}.\n ${resultMessage}`;
-
-
-
-
-
-
-
-
-
 /*ESERCIZIO 2 - Finta Login
 Inventa una lista di email autorizzate
 Chiedi all’utente la sua email, con un piccolo form.
 controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo.*/
 
+/*
+1- mi servirà una variabile per le mail autorizzate e per il messagio per stampare in pagina
+2- nel DOM dovrò creare il mio form con uno spazio mail e un bottone
+3- dovrò chiedere all'utente di inserire una mail attraverso elementi in pagina
+4- dovrò controllare se la mail inserita dall'utente è nella lista di mail autorizzate
+5- se la mail è inclusa diamo un messaggio di benvenuto
+6- se la mail non è inclusa diamo un messaggio negativo
+7- uso la variabile creata all'inizio per stampare il risultato in pagina
+*/
+
 // FASE PREPARAZIONE
-
+const emailAuthorized = ["me.gina@gmail.com","me.paola@gmail.com","pagi@gmail.com","gipa@yahoo.it","folino@hotmail.it","triglia@hotmail.it"];
+let receivedEmail ='';
 // FASE RACCOLTA DATI
-
+const button = document.querySelector('button');
+const emailField = document.getElementById('email');
 // FASE LAVORAZIONE DATI
-
+button.addEventListener('click',function(){
+    const receivedEmail = emailField.value.trim();
+    console.log(receivedEmail);
+    // uso una variabile di appoggio
+    let finalMessage ='';
+    for(i=0; i< emailAuthorized.length; i++){
+        if(emailAuthorized[i]=== receivedEmail){
+            finalMessage ='email autorizzata';
+        }
+    }
+    // se finalMessage è ancora uguale a stringa vuota non ho avuto nessuna corrispondenza
+    if (finalMessage === ''){
+        finalMessage ='email non autorizzata!';
+    }
+    console.log(finalMessage);
+});
 // FASE DI OUTPUT
