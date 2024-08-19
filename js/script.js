@@ -60,17 +60,12 @@ button.addEventListener('click',function(){
     const receivedEmail = emailField.value.trim();
     console.log(receivedEmail);
     // uso una variabile di appoggio
-    let finalMessage ='';
+    let finalMessage ='email non autorizzata!';
     for(i=0; i< emailAuthorized.length; i++){
         if(emailAuthorized[i]=== receivedEmail){
             finalMessage ='email autorizzata. Bentornato';
         }
     }
-    // se finalMessage è ancora uguale a stringa vuota non ho avuto nessuna corrispondenza
-    if (finalMessage === ''){
-        finalMessage ='email non autorizzata!';
-    }
-    // FASE DI OUTPUT
     console.log(finalMessage);
     alert(finalMessage);
 });
